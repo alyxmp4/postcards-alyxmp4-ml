@@ -19,7 +19,7 @@
 
 ![О веб-сайте](/public_assets/abt-website.png)
 
-### Что происходит на `index.php`
+### Что происходит в `index.php`
 
 1. Человек заходит на сайт и на главной странице его ждёт форма с записью кода открытки
 2. Человек вводит и нажимает на кнопку *Поиск*, если говорить уровню ниже, человек вводит форму HTML, форма настроена таким образом: 
@@ -27,14 +27,14 @@
 ```html
 <button type="submit"></button>
 ```
- человек отправляет форму\
+ человек отправляет форму
 > - Форма отправляет POST запрос
 ```html
 <form method="POST" action="./postcard.php"></form>
 ```
 На страницу `postcard.php` с введёнными данными
 
-### Что происходит на `postcard.php`
+### Что происходит в `postcard.php`
 
 3. Страница `postcard.php` получает с отправленных данных введённый код
 ```php
@@ -57,11 +57,11 @@ if (is_null($string[$_POST["code"]])) {
 4. Страница получает с `postcards.json` нужную запись и выводит её на сайт
 ```php
 ...
-            <h1 class="display-5 fw-bold">
-              <?php 
-              print($string[$_POST["code"]]["NAME"]) // get name of the postcard owner by their code from our data from postcards.json
-              ?>
-            </h1>
+  <h1 class="display-5 fw-bold">
+    <?php 
+    print($string[$_POST["code"]]["NAME"]) // get name of the postcard owner by their code from our data from postcards.json
+    ?>
+  </h1>
 ...
 
 ```
@@ -114,7 +114,7 @@ if (is_null($string[$_POST["code"]])) {
   file_put_contents($path, $final_data) // write ur json file for sure yeesss
 ```
 
-##Обработка ошибок
+## Обработка ошибок
 
 ![Об обработке ошибок](/public_assets/abt-errors.png)
 
