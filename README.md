@@ -27,16 +27,16 @@
 ```html
 <button type="submit"></button>
 ```
- человек отправляет форму
+> человек отправляет форму
 > - Форма отправляет POST запрос
 ```html
 <form method="POST" action="./postcard.php"></form>
 ```
-На страницу `postcard.php` с введёнными данными
+> На страницу `postcard.php` с введёнными данными
 
 ### Что происходит в `postcard.php`
 
-3. Страница `postcard.php` получает с отправленных данных введённый код
+3. Страница `postcard.php` получает записи из баз данных открыток, код открытки и кодирует их
 ```php
 <?php
  $data = file_get_contents("./data/postcards.json"); // get file content to read list of postcards
@@ -90,6 +90,7 @@ if (is_null($string[$_POST["code"]])) {
 ```
 
 8. Если всё нормально, сайт получит файл feedback.json и введёт туда все нужные данные полученные от пользователя
+
 8.1. Обозначим куда сохранять файл переменной `$path`
 
 ```php
