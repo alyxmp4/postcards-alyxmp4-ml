@@ -1,0 +1,4 @@
+# set main file
+
+DirectoryIndex index.php
+ErrorDocument 404 /err/404.php
